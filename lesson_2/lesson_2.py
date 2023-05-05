@@ -34,3 +34,11 @@ a = float(123)
 print(70 + float("100.5")) # output is 170.5
 
 print(str(70) + str(100)) # output is 70100
+
+3 + 5
+7 - 4
+3 * 2
+6 / 3 # always ends with a float
+2**2 # exponent or 2 to the power of 2
+
+#PEMDAS
