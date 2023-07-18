@@ -40,3 +40,4 @@ print(final)
 
 #Hard Level - Order of characters randomised:
 #e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
+print(''.join(random.sample(final, len(final))))
