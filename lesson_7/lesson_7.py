@@ -1,67 +1,12 @@
-#Step 4
-
 import random
-
-stages = ['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
-word_list = ["aardvark", "baboon", "camel"]
+from hangman_words import word_list
+from hangman_art import stages, logo
 chosen_word = random.choice(word_list)
 word_length = len(chosen_word)
 lives = 6
+guessed = []
+
+print(logo)
 
 # Testing code
 print(f'Pssst, the solution is {chosen_word}.')
@@ -74,6 +19,8 @@ print(display)
 
 while "_" in display:
     guess = input("Guess a letter: ").lower()
+    guessed.append(guess)
+    print(guessed)
     # Check guessed letter
     for position in range(word_length):
         letter = chosen_word[position]
@@ -93,5 +40,4 @@ while "_" in display:
     #Check if user has got all letters.
     if "_" not in display:
         print("You solved it bruthuuuurrrr")
-
     print(stages[lives])
